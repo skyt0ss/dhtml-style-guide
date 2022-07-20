@@ -5,7 +5,7 @@ This project is about trying to make sure the work from the aol.developer is not
 Over the years I found this a helpful reference and continue to this day. Much of the work here helped define behavior in the ARIA spec, especially the best practices section. Not much has changed since it was written.
 
 Github page:
-https://thiessenp.github.io/dhtml-style-guide/
+https://skyt0ss.github.io/dhtml-style-guide/
 
 Original source for this page:
 https://web.archive.org/web/20130127004544/http://dev.aol.com/dhtml_style_guide
