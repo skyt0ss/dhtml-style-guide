@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>DHTML Style Guide Working Group</title>
+    </head>
+    <body>
+
+<!-- 
+    BEGIN:
+    BELOW TAKEN FROM https://web.archive.org/web/20130127004544/http://dev.aol.com/dhtml_style_guide
+-->
+
+        <h1>DHTML Style Guide Working Group</h1>
+The DHTML Style Guide Working Group (DSGWG) has come together to create a recommendation for keyboard shortcuts to be used in website widgets. We realize that many keystrokes are already in use by various operating systems, user interfaces, and assistive technology. Therefore our task is to recommend the best, most intuitive, most international friendly shortcut keys possible without regard to their current use. It is hoped that developers, AT vendors, and Browser manufactures will use these as guidelines, but understand it may not be practical or possible given their individual constraints. <hr/>
+<h1>Table of Contents</h1>
+<ul>
+    <li><a href="#widgets">Widgets</a>
+    <ol>
+        <li><a href="#accordion">Accordion</a> see <a href="#tabpanel">Tab Panel</a></li>
+        <li><a href="#alert">Alert</a></li>
+        <li><a href="#autocomplete">Auto Complete</a></li>
+        <li><a href="#button">Button</a></li>
+        <li><a href="#checkbox">Check Box</a></li>
+        <li><a href="#combobox">Combo Box</a></li>
+        <li><a href="#datepicker">Date Picker</a></li>
+        <li><a href="#dialogmodal">Dialog (Modal)</a></li>
+        <li><a href="#dialognonmodal">Dialog (Non-Modal)</a></li>
+        <li><a href="#dialogtooltip">Dialog (Tooltip)</a></li>
+        <li><a href="#draganddrop">Drag &amp; Drop</a></li>
+        <li><a href="#grid">Grid/Tree Grid</a></li>
+        <li><a href="#landmarks">Landmark Navigation</a></li>
+        <li><a href="#link">Link</a></li>
+        <li><a href="#listbox">Listbox</a></li>
+        <li><a href="#mediaplayer">Media Player</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#menubutton">Menu Button</a></li>
+        <li><a href="#popupmenu">Popup Menu</a></li>
+        <li><a href="#popuphelp">Popup Help (aka Bubble Help)</a></li>
+        <li><a href="#radiobutton">Radio Button</a></li>
+        <li><a href="#richtext">Rich Text Editor</a></li>
+        <li><a href="#slider">Slider</a></li>
+        <li><a href="#slidertwothumb">Slider (Multi-Thumb)</a></li>
+        <li><a href="#spinbutton">Spinbutton</a></li>
+        <li><a href="#tabpanel">Tab Panel</a></li>
+        <li><a href="#toolbar">Tool Bar</a></li>
+        <li><a href="#tooltip">Tooltip Widget</a></li>
+        <!-- <li><a href="#treegrid">Tree Grid</a></li> -->
+        <li><a href="#treeview">Tree View</a></li>
+        <li><a href="#windowsplitter">Window Splitter</a></li>
+        <li><a href="#wizard">Wizard</a></li>
+    </ol>
+    </li>
+    <li><a href="#global">Global Recommendations</a></li>
+    <li><a href="#gap">ARIA Gap Analysis</a></li>
+    <li><a href="#participants">Participants and Contributors</a></li>
+</ul>
+<p>For more information about Key-navigable custom JavaScript widgets see the <a href="https://web.archive.org/web/20130127004544/http://wiki.codetalks.org/wiki/index.php/Docs/Keyboard_navigable_JS_widgets">Codetalks Wiki</a>.</p>
+<hr/>
+<h2><a name="widgets">Widgets</a></h2>
+<ol> <!-- ACCORDION -->
+    <li>
+    <h2><a name="accordion">Accordion</a></h2>
+    </li>
+    <p>See <a href="#tabpanel">Tab Panel</a>.</p>
+    <hr/>
+    <!-- Alert -->
+    <li>
+    <h2><a name="alert">Alert</a></h2>
+    </li>
+    <p>Example: A message with important information (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#alert">ARIA Alert</a>).</p>
+    <p>Example: <a href="https://web.archive.org/web/20130127004544/http://devserv.rehab.uiuc.edu/ita/jongund/citaweb/test/aria/alert/alert1.php"> http://devserv.rehab.uiuc.edu/ita/jongund/citaweb/test/aria/alert/alert1.php</a></p>
+    <p>An alert (ARIA active region) does not require any keyboard support. See <a href="#dialogmodal">Dialog (Modal)</a>, <a href="#dialognonmodal">Dialog (Non-Modal)</a> and <a href="#dialogtooltip">Dialog (Tooltip)</a> below.</p>
+    <hr/>
+    <!-- Auto Complete -->
+    <li>
+    <h2><a name="autocomplete">Auto Complete</a></h2>
+    </li>
+    <p>Example: The search tool of a web document (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#search">ARIA Search</a>).</p>
+    <p>A combo-box where the choices offered are filtered by the information typed into the box. An editable auto-complete allows choices that are not in the list to be entered. An example of an editable auto-complete is the URL field in the browsers. An auto complete component consists of a textbox and an associated drop-down list of choices. There is usually an icon associated with the textbox to trigger the display of the drop-down list of choices via the mouse.</p>
+    <p>Here are the mouse and keyboard gestures to interact with the auto complete component:</p>
+    <ul>
+        <li><strong>Click</strong> on an icon associated with the textbox to display the entire list of choices in a drop-down. Most auto-complete widgets will have an arrow or icon associated with the textbox. If there is no icon, clicking in the textbox will trigger the display of the drop-down.</li>
+        <li>With focus in an empty textbox, press <strong>Arrow Down, Arrow Up, Alt Arrow Down or Alt Arrow Up</strong> to display the entire list of choices - focus remains in the textbox and no choice is highlighted. Press the down arrow to highlight the first choice in the list. Press the up and down arrow keys to highlight the desired choice in the list. Note that the arrows will wrap through the textbox when the top or bottom of the list is reached. For example, pressing the down arrow when the last choice is highlighted will move focus back to the textbox, pressing down again will move focus to the first item in the list. Likewise, with focus in the textbox and the list displayed, pressing up arrow will move focus to the last item in the list. When a choice is highlighted using the arrow keys, the highlighted choice is displayed in the textbox. Press enter or click on the highlighted choice to select it and close the drop-down list. This mimics the behavior of the HTML select element.</li>
+        <li>With the drop-down list of choices displayed, move the mouse pointer over an item in the list to highlight it. The textbox value is not modified when the mouse is used to highlight a choice. Clicking on the highlighted choice will close the drop-down and update the textbox with the selected choice. This mimics the behavior of the HTML select element.</li>
+        <li>With focus in an empty textbox, type <strong>Any Letter</strong> If any of the available choices begin with the letter typed, those choices are displayed in a drop down. Keyboard and mouse behavior in the drop-down matches that described above. If the letter typed does not match any of the available choices the drop-down list is not displayed.</li>
+        <li>With focus in textbox with an existing value type <strong>Additional Letters.</strong> As the user types letters the list of choices is filtered so that only those that begin with the typed letters are displayed. Until the user presses the arrow keys to highlight a particular choice, only the typed letters are displayed in the textbox. In an editable auto-complete, If there are no choices that match the letter(s) typed, the drop down list of choices is closed. In a non-editable auto-complete any letters which do not result in a match from the list are ignored, the drop down list of choices remains static until the user presses escape to clear the text field, backspaces to remove some of the letters previously typed, or types an additional letter that results in a valid list of choices. Navigation through the list of choices and display of the highlighted choice in the textbox works as described above.<br/>
+        <em>Optional: When a choice is highlighted via arrow key navigation, the input cursor is left at the end of the typed entry and the highlighted choice is displayed in the textbox with the characters after the input cursor selected. Typing an additional character will remove the auto-completed portion and append the newly typed character to the end of the previously typed characters. The list will be filtered based on the additional character(s) typed.</em></li>
+        <li>With focus in a textbox, type <strong>Escape</strong>
+        <ul>
+            <li>If there is no text in the textbox, pressing escape closes the drop-down if it is displayed.</li>
+            <li>For an editable autocomplete that has text in the textbox that was both typed by the user and auto-completed by highlighting a choice using the keyboard, the auto-completed portion of the text is cleared and the user typed characters remain in the textbox. The drop-down list is closed. To completely clear the textbox contents the user must use the backspace key to remove the typed characters. This is how the Google search box in the Firefox UI works. <em>Recommend that (unlike the Google example), pressing the escape key again completely clears the textbox rather than relying on only the backspace key.</em></li>
+            <li>For a non editable auto-complete that has text in the textbox that was both typed by the user and auto-completed by highlighting a choice using the keyboard, pressing escape closes the drop-down list and leaves the current choice in the textbox.</li>
+            <li>For an editable or non-editable auto complete with text in the textbox that was typed by the user and the mouse is highlighting a choice in the drop down (keyboard navigation was NOT used), pressing escape closes the drop down and leaves the typed text displayed in the text box. Need to consider if pressing escape again should clear the typed text. The user must press the down arrow or alt down arrow or click the associated icon to invoke the drop-down list of choices again.</li>
+        </ul>
+        </li>
+        <li>Moving focus out of an empty auto complete field where a value is required should either invoke an error or if a default value was initially assigned, reset the value to the default value.</li>
+        <li>Moving focus out of an auto complete field that does not contain a valid entry should either invoke an error or if a default value was initially assigned, reset the value to the default value.</li>
+        <li><strong>Note:</strong> It is good practice to limit the number of matching items in the drop down to a reasonable number. The reasonable number is determined by the task at hand. A list of the 50 US States is probably reasonable but a list containing all of the office numbers in a building is probably not appropriate.</li>
+    </ul>
+    <hr/>
+    <!-- Button -->
+    <li>
+    <h2><a name="button">Button</a></h2>
+    </li>
+    <p>Example: Allows for user-triggered actions (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#button">ARIA Button</a>).</p>
+    <ul>
+        <li><strong>Spacebar or Enter keys</strong> executes the action for that button.
+        <ul>
+            <li>If the button activation closes the containing entity or launches another entity, then focus moves to the newly opened entity.</li>
+            <li>If the button activation does not close or dismiss the containing entity, then focus remains on the button. An example might be an Apply or Recalculate button.</li>
+        </ul>
+        </li>
+    </ul>
+    <hr/>
+    <!-- CHECKBOX -->
+    <li>
+    <h2><a name="checkbox">Checkbox</a></h2>
+    </li>
+    <p>Example: A control that has three possible values: &quot;true&quot;, &quot;false&quot;, or &quot;mixed&quot; (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#checkbox">ARIA Checkbox</a>).</p>
+    <ul>
+        <li>Two State Check Box
+        <ul>
+            <li><strong>Space Bar</strong> key toggles the selection, checking or unchecking the box.</li>
+        </ul>
+        </li>
+        <li>Three State Check Box
+        <ul>
+            <li>If not checked, <strong>space</strong> checks the check box</li>
+            <li>If checked, <strong>space</strong> unchecks the check box</li>
+            <li>If partially checked, <strong>space</strong> unchecks the check box.</li>
+        </ul>
+        </li>
+    </ul>
+    <hr/>
+    <!-- COMBOBOX -->
+    <li>
+    <h2><a name="combobox">Combobox</a></h2>
+    </li>
+    <p>Example: Combobox is the combined presentation of a single line textbox with a drop down select widget. The combobox may be editable. Typically editable combo boxes are used for autocomplete behavior, and the autocomplete property would be used on the child textbox. (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#combobox">ARIA Combobox</a>)</p>
+    <ul>
+        <li><strong>Tab</strong> moves focus into the edit field (Edit field to hold value of selected item in the dropdown list). A second Tab key selects the current item on the list, updates the edit field, closes the dropdown list, and moves focus to the next focusable item in the tab order.</li>
+        <li><strong>Alt Down Arrow and or Space</strong> opens the dropdown list and moves focus to the selected option. (If nothing is selected, then focus moves to the first option in the list). If the combobox is not editable, then the space bar may also be used to open the dropdown list.</li>
+        <li><strong>Up and Down Arrow</strong> moves focus up and down the list. As focus moves inside the dropdown list, the edit field is updated.</li>
+        <li><strong>Enter</strong> selects the current item on the list, updates the edit field, highlights the selected item in the dropdown list, closes the dropdown list and returns focus to the input field.</li>
+        <li><strong>Escape key</strong> closes the dropdown list, returns focus to the edit field, and does not change the current selection.</li>
+        <li><strong>Typing a letter (printable character) key</strong> moves focus to the next instance of a visible node whose title begins with that printable letter.</li>
+    </ul>
+    <hr/>
+    <!-- DATE PICKER -->
+    <li>
+    <h2><a name="datepicker">Date Picker</a></h2>
+    </li>
+    <p>(<a href="https://web.archive.org/web/20130127004544/http://dev.aol.com/downloads/DatePicker.txt"> Complete proposal from Chris Blouch</a>)</p>
+    <p>Example: Choose a date from a month view of a calendar. Day and hour views are not a part of this discussion.</p>
+    <ul>
+        <li><strong>TAB</strong> Like other widgets the date picker widget receives focus to become active by tabbing into it. Once focused is received focus is repositioned on todays date in a grid of days and weeks. A second tab will take the user out of the date picker widget. Focus initial is placed on todays date.</li>
+        <li><strong>Shift Tab</strong> reverses the direction of the tab order. Once in the widget, a Shift Tab will take the user to the previous focusable element in the tab order.</li>
+        <li><strong>Arrow Up and Down</strong> goes to the same day of the week in the previous or next week respectively. If the user advances past the end of the month they continue into the next or previous month as appropriate.</li>
+        <li><strong>Arrow Left and Right</strong> advances one day to the next, also in a continuum. Visually focus is moved from day to day and wraps from row to row in a grid of days and weeks.</li>
+        <li><strong>Control  Page Up</strong> Moves to the same date in the previous year</li>
+        <li><strong>Control  Page Down</strong> Moves to the same date in the next year</li>
+        <li><strong>Space</strong>
+        <ul>
+            <li>Singleton Mode: acts as a toggle either selecting or deselecting the date.</li>
+            <li>Contiguous Mode: Similar to selecting a range of text. Space selects the first date. Shift Arrows add to the selection. Pressing Space again deselects the previous selections and selects the current focused date.</li>
+            <li>Non-Contiguous Mode: Space may be used to select multiple non-contiguous dates.</li>
+        </ul>
+        </li>
+        <li><strong>Home</strong> Moves to the first day of the current month.</li>
+        <li><strong>End</strong> Moves to the last day of the current month.</li>
+        <li><strong>Page Up</strong> Moves to the same date in the previous month</li>
+        <li><strong>Page Down</strong> Moves to the same date in the next month</li>
+        <li><strong>Enter Key</strong> Submits the form</li>
+        <li><strong>Escape</strong> in the case of a popup date picker, closes the widget without any action.</li>
+        <li><strong>Note:</strong> Navigation into the past is optional</li>
+    </ul>
+    <hr/>
+    <!-- DIALOG MODAL -->
+    <li>
+    <h2><a name="dialogmodal">Dialog (Modal)</a></h2>
+    </li>
+    <p>Example: A dialog is a small application window that sits above the application and is designed to interrupt the current processing of an application in order to prompt the user to enter information or require a response (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#dialog">ARIA Dialog</a>).</p>
+    <p>A modal dialog is a dialog that takes and holds focus until the dialog is closed or submitted.</p>
+    <ul>
+        <li><strong>ENTER</strong> If the purpose of the dialog is to gather information, the dialog should have a mechanism to submit the data gathered usually via a keyboard accessible button. The Enter key should serve as the default submit action.</li>
+        <li><strong>ESC</strong> There should be a method to close the dialog without taking any action. This could be implemented via a cancel button which is keyboard accessible. It is recommended that a dialog also be cancelled by pressing the escape key with focus on any item.</li>
+        <li><strong>Tab</strong> Focus must be held within the dialog until it is cancelled or submitted. As the user presses tab to move within items in the dialog, pressing tab with focus on the last focusable item in the dialog will move focus back to the first focusable item in the dialog.</li>
+        <li><strong>Shift Tab</strong> Likewise, if the user is shift-tabbing through elements in the dialog, pressing shift-tab with focus on the first focusable item in the dialog will move focus to the last item in the dialog.</li>
+        <li><strong>Note:</strong> If the current focus item has escape key behavior, the press of the escape will be handled by the current item and the user may have to press escape an additional time to close the dialog.</li>
+        <li><strong>Note:</strong> Even if the user clicks outside of the dialog on the application which invoked the dialog, focus remains in the dialog.</li>
+        <li><strong>Note:</strong> Because the dialog is modal and the user can not interact with the invoking application while the dialog is displayed, there is not a requirement to make the dialog moveable via the mouse although this behavior is recommended.</li>
+        <li><strong>Note:</strong> When the dialog is closed or cancelled focus should return to the element in the application which had focus before the dialog is invoked. This is usually the control which opened the dialog.</li>
+        <li><strong>Note:</strong> When a modal dialog opens focus goes to the first focusable item in the dialog. Determining the first focusable item must take into account elements which receive focus by default (form fields and links) as well as items which may have a tabindex attribute with a positive value. If there is no focusable item in the dialog, focus is placed on the dialog container element.</li>
+    </ul>
+    <hr/>
+    <!-- DIALOG NON-MODAL -->
+    <li>
+    <h2><a name="dialognonmodal">Dialog (Non-Modal)</a></h2>
+    </li>
+    <p>&nbsp;</p>
+    <p>Example: A dialog is a small application window that sits above the application and is designed to interrupt the current processing of an application in order to prompt the user to enter information or require a response (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#dialog">ARIA Dialog</a>).</p>
+    <p>A non-modal dialog is one which is displayed and focusable at the same time as the application which invoked it. Also like the modal dialog, focus via the tab and shift-tab key must be maintained within the dialog. However, a non-modal dialog should have a keyboard mechanism to return focus to the application while leaving the dialog open.</p>
+    <ul>
+        <li><strong>ESC</strong> cancel the dialog without taking any action</li>
+        <li><strong>ENTER</strong> method to submit any data gathered in the dialog.</li>
+        <li><strong>F6</strong> The F6 key is the recommended key to move focus between the application and an open non-model dialog.</li>
+        <li><strong>Note:</strong> The mouse user may click on either the application or the dialog to change focus between the two.</li>
+        <li><strong>Note:</strong> In a Web application the non-modal dialog is usually always displayed above the application page, rather than in a separate browser window but that is not a requirement.</li>
+        <li><strong>Note:</strong> This dialog box is dragable by the mouse user and an equivalent behavior (<a href="#draganddrop">Drag &amp; Drop</a>) should be offered to the keyboard only user.</li>
+    </ul>
+    <hr/>
+    <!-- DIALOG Tooltip -->
+    <li>
+    <h2><a name="dialogtooltip">Dialog (Tooltip)</a></h2>
+    </li>
+    <p>Example: A popup that displays a description for an element when a user passes over or rests on that element. Supplement to the normal tooltip processing of the user agent. (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#tooltip">ARIA Tooltip</a>).</p>
+    <p>A tooltip dialog is a modal dialog that is rendered near the invoking element and visually connected via a cartoon bubble-like protrusion.</p>
+    <ul>
+        <li><strong>ESC</strong> The tooltip dialog is closed by pressing the escape key when focus is within the dialog, mouse clicking on a close icon, or mouse clicking outside of the dialog onto the application.</li>
+        <li><strong>Tab</strong> Focus must be held within the dialog until it is cancelled or submitted. As the user presses tab to move within items in the dialog, pressing tab with focus on the last focusable item in the dialog will move focus back to the first focusable item in the dialog.</li>
+        <li><strong>Shift Tab</strong> Likewise, if the user is shift-tabbing through elements in the dialog, pressing shift-tab with focus on the first focusable item in the dialog will move focus to the last item in the dialog.</li>
+        <li><strong>Note:</strong> It is modal because focus is trapped within the dialog as the user navigates via the tab and shift-tab key.</li>
+        <li><strong>Note:</strong> Unlike a true modal dialog, the user can click outside of the dialog, however in that case the tooltip dialog is immediately closed.</li>
+        <li><strong>Note:</strong> A tooltip dialog can not be moved/dragged.</li>
+        <li><strong>Note:</strong> Other than the close and move behavior, all other behaviors of a modal dialog are implemented by the tooltip dialog.</li>
+    </ul>
+    <hr/>
+    <li>
+    <h2><a name="draganddrop">Drag and Drop</a></h2>
+    </li>
+    <p>See ARIA <a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria-practices/#dragdrop">Drag &amp; Drop</a></p>
+    <p>A drag and drop operation is available in contexts where the widget supports selection of objects, including single and multiple selection models. An example is a <a href="#treeview">Treeview</a>. The widget is a container of one or more objects that are potentially draggable.</p>
+    <p>Draggable objects are identified using the property &quot;aria-grabbed&quot;. If the aria-grabbed property is absent, or if it has the value &quot;undefined&quot;, then the object cannot partake in drag and drop.</p>
+    <p>Other objects are potential drop targets. Drop targets are identified using the property &quot;aria-dropeffect&quot; set to one or more of its values.</p>
+    <ul>
+        <li><strong>Space</strong> When focused on an object that is draggable but not selected (aria-grabbed=false), the Space key marks the object and adds it to the set of objects to be dragged, clearing any previously marked objects. The object's aria-grabbed state is set to &quot;true&quot;. The Space key is used to mark a single object, or to mark a range of objects by using it in conjunction with Shift or Control.</li>
+        <li><strong>Shift  Space</strong> When focused on an object which supports drag and drop, the Shift  Space creates an inclusive contiguous set selecting all objects between the current one and the previously marked object. A second Shift  Space modifies the extent of the contiguous set by deselecting everything and creating an inclusive contiguous set selecting objects between the new current object and the previously selected object.</li>
+        <li><strong>Control  Space</strong> When focused on an object that is draggable, Control Space toggles the object's membership in the set of draggable objects. In this way, Control Space can be used to create a discontiguous set of draggable objects. The aria-grabbed property of the objects is toggled between &quot;true&quot; and &quot;false&quot;.</li>
+        <li><strong>Control  M*</strong> Indicates all the objects have been selected, and are ready to be dragged. Because calculating the set of available drop points based on the type of objects in the selected set is computationally expensive, the user needs to signal that their selection process is complete by pressing Control-M.</li>
+        <li><strong>Navigate</strong> to the drop target using standard navigation keys available in the particular widget. (Tab, Arrow, etc).</li>
+        <li><strong>Shift  F10</strong> Optionally invokes a list of possible drop targets. The user can navigate the list to choose a drop target to complete the operation.</li>
+        <li><strong>Control  M*</strong> When focus is on a drop target (aria-dropeffect is set on the focused object), at the developer's option, provides the most intuitive type of drop, either copy, move, execute, or a shortcut.</li>
+        <li><strong>Shift  Control  M*</strong> When focused on an object that is a drop target (aria-dropeffect set), Shift  Control  M presents a menu that will allow one or more of copy, move, execute, create a shortcut, or cancel. The values in the menu corresponds one-to-one with the values of the aria-dropeffect property.</li>
+        <li><strong>Escape</strong>
+        <ul>
+            <li>If interacting with the list invoked using Shift  F10, or the menu invoked using Shift  Control  M (see above), Escape dismisses the list or menu. Focus is set to the object from which the user invoked the list or menu.</li>
+            <li>In all other cases, abandons the drag and drop operation and deselects all objects.</li>
+        </ul>
+        </li>
+        <!--  <li><strong>* Note:</strong> There has been quite a bit of discussion in the group about the use of the shortcut keys M above. Some people believe it is more appropriate to use Control  G for Grab and Control  D for drop. Others believe you should follow the convention for Control  C, X and V. Others suggest the M is best in all cases as presented above. The group did recommend that if you are using a real copy and paste operation then Control  C, X and V should be used. If on the other hand the operation is a Grab and Drop, then G and D would work fine although a problem for internationalzation. Therefore it is best to leave the actual keys up to the developer of the individual widget to choose the best keys for his/her application.</li> -->
+        <li><strong>* Note: </strong> While there is value to grabbing and dropping being invoked by the same key (Control M), some may find using the keystrokes associated with cut and paste will incur a lower cognitive load. Granted that many drag and drop operations do not map well to the mental model of cutting and pasting, the behaviors and commands are sometimes close enough as to be easier to understand than a new generic command. Using the X and V key combinations is therefore a choice to be made by the widget implementor. Likewise, some would argue that a different letter such as G for grab would make more sense. Be aware that Control-G is already used on some browsers but other combinations such as Alt-G are usually available. Also there are diminishing returns with internationalization breaking many English letter to word mappings, so choosing G (or any other letter) over M may not improve cognitive load in non-English implementations.</li>
+        <li><strong>Note:</strong> It is recommended that other methods of performing the same operation without drag and drop may be the best way to meet the accessibility requirements. As an example, when moving a mail message from the inbox to another folder, a list of those folders could be presented in a select list as an alternative.</li>
+        <li><strong>Note:</strong> Selection of the objects to be moved may differ depending on the type of object or objects to be dragged and what type of widget in which they are contained. Example. A list of emails that might be selected one at a time or many at a time in contiguous or non-contiguous manner using the Space and Shift  Space keys as indicated above. However, text in a document might better be selected by positioning the cursor at the beginning of a word and holding down the shift key while using the Arrow keys Left and Right to mark the letters you wish to move.</li>
+        <li><strong>Note:</strong> Dropping is only allowed on one drop target at a time. The user may have to drag and drop several times to accomplish multiple tasks.</li>
+    </ul>
+    <hr/>
+    <!-- GRID/TREEGRID -->
+    <li>
+    <h2><a name="grid">Grid/Tree Grid</a></h2>
+    </li>
+    <p>Example: A grid (e.g. a data table) of ARIA role Grid. (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#grid">ARIA Grid</a>)<br/>
+    Example: A data table containing rows and cells of read only information<br/>
+    Example: A webmail inbox containing checkboxes, links, and read only information arranged in rows and columns.<br/>
+    Example: A teacher's online gradebook containing select lists, text input fields and read-only information arranged in rows and columns.</p>
+    <ul>
+        <li><strong>Tab</strong>
+        <ul>
+            <li>The initial tab enters the grid with focus on the first cell of the first row, often a header.</li>
+            <li>A second tab moves out of the grid to the next tab stop on the page.</li>
+            <li>Once focus is established in the grid, a TAB into or a Shift Tab into the grid will return to the cell which last had focus.</li>
+        </ul>
+        </li>
+        <li><strong>Left and Right Arrow</strong> Move focus to the adjacent column's cell. There is no wrap at the end or beginning of columns.</li>
+        <li><strong>Up and Down Arrow</strong> Move focus to the adjacent row's cell. There is no wrap at the first or last row.</li>
+        <li><strong>Home</strong> moves focus to the first cell of the current row</li>
+        <li><strong>End</strong> moves focus to the last cell of the current row</li>
+        <li><strong>Page Up</strong> moves focus to the first cell in the current column</li>
+        <li><strong>Page Down</strong> moves focus to the last cell in the current column</li>
+        <li><strong>Enter or F2</strong> pressed while focus is on a cell containing an actionable item will enter Actionable Mode. Pressing the <strong>Tab</strong> key while in actionable mode moves focus to the next actionable item within the grid, wrapping when the last actionable item in the grid is reached. <strong>Shift Tab</strong> does the same as Tab but in reverse order.
+        <p><strong>Option</strong> the author may choose to enable 'auto action' on a cell in order to avoid having to press enter or F2 a second time to activate the default behavior of the object contained in a cell. For example, if the cell contains a single link the author may want to have enter follow the link rather than just move focus to it. This auto action mode should be configurable on a per cell basis as its utility is dependent on each cell's content. For example, if the cell contains multiple links, auto action should be disabled as its behavior would be ambiguous.</p>
+        <p><strong>Option</strong> the author may choose to implement Enter or F2 as a toggle such that pressing these keys multiple times will enter and exit actionable mode. The working group was divided on this point. Some thought this would be confusing while others found it intuitive.</p>
+        </li>
+        <li><strong>Esc</strong> exits Actionable Mode</li>
+        <li><strong>Selection</strong>  Table selection is a 3x2 matrix of options. We have rows, cells and columns which we want to select either individually or contiguously.
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>Object</th>
+                    <th>Individual</th>
+                    <th>Contiguous</th>
+                </tr>
+                <tr>
+                    <td>Rows</td>
+                    <td><strong>shift space</strong></td>
+                    <td><strong>shift arrows</strong> from current position (up/right and down/left functional equivalent)</td>
+                </tr>
+                <tr>
+                    <td>Cells</td>
+                    <td><strong>space</strong></td>
+                    <td><strong>shift arrows</strong> from current position</td>
+                </tr>
+                <tr>
+                    <td>Columns</td>
+                    <td><strong>control space</strong></td>
+                    <td><strong>shift arrows</strong> from current position (up/right and down/left functional equivalent)</td>
+                </tr>
+                <tr>
+                    <td>Grid</td>
+                    <td colspan="2"><strong>control A</strong> to select the entire grid.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Shift F8</strong> adds additional discontinuous items to the selection set. If the user has already selected a column then shift f8 will add additional columns to the set. Similar behavior for rows and cells.</p>
+        <p>See <a href="#global">Global Recommendations</a> for information on cut, copy and paste.</p>
+        <p><strong>Assumption:</strong> row selection is the most common use case so it is assigned the single key space command.</p>
+        <p><strong>Assumption:</strong> no mixed selections. Selections are either individual or contiguous items and not both at the same time. Selection mode change resets the selections. For example, performing contiguous row selections and then starting selection of individual cells would cause the previously selected contiguous rows to become deselected and a new selection set is started.</p>
+        <p><strong>Option:</strong> the author may choose to disable multiple selections. In this case contiguous is disabled by definition and a second selection will deselect any previous selections. The author may also choose to disable row or column selections as part of disabling multiple selections because in some scenarios these could be functional equivalents of multi-selection.</p>
+        <p><strong>Note:</strong>The author should use different styling for the selection and persist that styling even when the grid does not have focus</p>
+        </li>
+    </ul>
+    <!-- TREEGRID -->
+    <h3><a name="treegrid">Tree Grid</a></h3>
+    <p>Example: A grid whose rows can be expanded and collapsed in the same manner as for a tree (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#treegrid">ARIA Treegrid</a>).</p>
+    <p>Example: A Tree Grid is a combination of a Treeview and a Grid with rows that are expandable. Examples include a threaded view of an e-mail grid or a calendar that opens month, week and day views.</p>
+    <img src="https://web.archive.org/web/20130127004544im_/http://dev.aol.com/images/TableWithGroupedRows.jpg" alt=""/>
+    <p>Keyboard controls are the same as a grid with the following additions</p>
+    <ul>
+        <li><strong>Control and Left Right Arrows</strong> Expand or collapse rows.</li>
+        <li><strong>Up and Down Arrows</strong> The down arrow moves focus to the first column of a child row, if expanded. Otherwise focus is moved to the same column in the next row. Up arrow performs the same navigation but in reverse.</li>
+        <li><strong>Note:</strong>The author may choose to indent child nodes visually. This should be done with an appropriate number of spacer cells marked as presentation in order to keep the headers aligned.</li>
+        <li><strong>Note:</strong>If cells are used for padding or layout of the hierarchy, navigation to those presentational cells should be prevented.</li>
+    </ul>
+    <hr/>
+    <!-- Landmark Navigation -->
+    <li>
+    <h2><a name="landmarks">Landmark Navigation</a></h2>
+    </li>
+    <p>Example: ARIA provides for many roles that describe various types of content like Article, Heading, etc. It would be useful to provide a keyboard shortcut that would cycle through these landmarks similar to the way a tab key currently traverses tabstops. (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria-practices/#kbd_layout">ARIA: Steps for defining a logical navigational structure</a>)</p>
+    <p>ARIA Landmark Roles:</p>
+    <ul>
+        <li>Article</li>
+        <li>Banner</li>
+        <li>Complementary</li>
+        <li>Contentinfo</li>
+        <li>Main</li>
+        <li>Navigation</li>
+        <li>Search</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p>Other ARIA Roles that might benefit from Landmark Navigation:</p>
+    <ul>
+        <li>Directory</li>
+        <li>Group</li>
+        <li>Log</li>
+        <li>Status</li>
+        <li>Heading</li>
+        <li>Menu</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p>Keyboard Shortcuts</p>
+    <ul>
+        <li><strong>Control  Alt  Tab Rotates forward through the landmarks.</strong></li>
+        <li><strong>Shift  Control  Alt  Tab reverses the rotation.</strong></li>
+        <li><strong>Note: </strong>The group felt that implementation of this would best be left to the browser and not the web page developer.</li>
+    </ul>
+    <hr/>
+    <!-- LINK -->
+    <li>
+    <h2><a name="link">Link</a></h2>
+    </li>
+    <p>Example: Interactive reference to a resource (note, that in [XHTML] 2.0 any element can have an href attribute and thus be a link) (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#link">ARIA</a> Link).</p>
+    <ul>
+        <li><strong>Tab</strong> moves focus to the Link. A second tab moves focus to the next focusable item.</li>
+        <li><strong>Space or Enter</strong> executes the link.</li>
+        <li><strong>Shift  F10</strong> is used to bring up an associated <a href="#popupmenu">Popup Menu</a>.</li>
+    </ul>
+    <hr/>
+    <!-- LIST BOX -->
+    <li>
+    <h2><a name="listbox">Listbox</a></h2>
+    </li>
+    <p>Example: A widget that allows the user to select one or more items from a list of choices. (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#listbox">ARIA Listbox</a>).</p>
+    <ul>
+        <li><strong>Tab:</strong> When a list is tabbed to, select the first item if nothing else is already selected. A second tab will take the user out of the widget to the next tab stop on the page.</li>
+        <li><strong>Up/down arrow</strong> navigate up and down the list.</li>
+        <li><strong>Shift up and shift down</strong> move and extend the selection.</li>
+        <li><strong>Typing letter or several letters</strong> to navigate (same letter goes to each item starting with that, different letters go to first item starting with that entire string).</li>
+        <li><strong>Shift F10:</strong> If the current item has an associated context menu, then this key combination will launch that menu.</li>
+        <li><strong>Selection</strong>
+        <ul>
+            <li>Checkbox - <strong>Space bar</strong> toggles <a href="#checkbox">checkboxes</a>, if the list items are checkable</li>
+            <li>Selectable List Items
+            <ul>
+                <li><strong>Space</strong> acts as a toggle to select and deselect the current item. If previous items have been selected, it also deselects them and selects the current item.</li>
+                <li><strong>Shift  Space</strong> selects contiguous items from the last selected item to the current item.</li>
+                <li><strong>Control  Arrow</strong> moves without selecting.</li>
+                <li><strong>Control  Space</strong> selects non-contiguous items and adds the current selected item to all previously selected items.</li>
+                <li><strong>Control  A</strong> It is recommended a checkbox, link or other method be used to select all. The Control  A key could be used to provide the shortcut key.</li>
+            </ul>
+            </li>
+        </ul>
+        </li>
+        <li><strong>Note: </strong>It is recommended the developer use different styling for the selection when the list is not focused (hint: non-active selection is often shown with a lighter background color).</li>
+    </ul>
+    <hr/>
+    <!-- Media PLAYER -->
+    <li>
+    <h2><a name="mediaplayer">Media Player</a></h2>
+    </li>
+    <p>Example: A radio or video player.</p>
+    <ul>
+        <li><strong>Control  Alt  P</strong> = Pause/Play toggle</li>
+        <li><strong>Control  Alt  S</strong> = Stop the player (May not be needed if Alt  P performs the same functionality.)</li>
+        <li><strong>Control  Alt  M</strong> = Mute</li>
+        <li><strong>Control  Alt  U</strong> = Volume Up</li>
+        <li><strong>Control  Alt  D</strong> = Volume Down</li>
+        <li><strong>Control  Alt 1 &acirc;&euro;&ldquo; 5</strong> = Change the volume. 1 being the lowest volume and 5 being the loudest.</li>
+        <li><strong>Control  Alt  C</strong> Captions toggle.</li>
+    </ul>
+    <hr/>
+    <!-- MENU -->
+    <li>
+    <h2><a name="menu">Menu</a></h2>
+    </li>
+    <p>Example: Offers a list of choices to the user (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#menu">ARIA Menu</a>).</p>
+    <ul>
+        <li>If a menu bar item has focus and the menu is not open, then:
+        <ul>
+            <li><strong>Enter, Spacebar, and the up down arrow keys</strong> opens the menu and places focus on the first menu item in the opened menu or child menu bar.</li>
+            <li><strong>Left or right arrow keys</strong> moves focus to the adjacent menu bar item.</li>
+        </ul>
+        </li>
+        <li>When a menu is open and focus is on a menu item in that open menu, then
+        <ul>
+            <li><strong>Enter or Spacebar</strong> invokes that menu action (which may be to open a submenu).</li>
+            <li><strong>Up or down arrow keys</strong> cycles focus through the items in that menu.</li>
+            <li><strong>Escape</strong> closes the open menu or submenu and returns focus to the parent menu item.</li>
+            <li>If the menu item with focus has a submenu, pressing <strong>Enter, Spacebar, or the right arrow key</strong> opens the submenu and puts focus on the first submenu item.</li>
+        </ul>
+        </li>
+        <li>When a submenu is open and focus is on a menu item in that submenu:
+        <ul>
+            <li><strong>Up or down arrow keys</strong> cycle through the submenu items (behaves the same as open menu).</li>
+            <li><strong>Escape or the left arrow key</strong> closes the submenu and returns focus to the parent menu item.</li>
+        </ul>
+        </li>
+        <li><strong>Typing a letter (printable character) key</strong> moves focus to the next instance of a visible node whose title begins with that printable letter.</li>
+        <li>First item in menu bar should be in the tab order (tabindex=0).</li>
+        <li>Disabled menu items receive focus but have no action when <strong>enter or left/right arrow</strong> is pressed. It is important that the state of the menu item be clearly communicated to the user.</li>
+        <li><strong>Tabbing</strong> out of the menu component closes any open menus.</li>
+        <li>With focus on a menu item and a sub menu opened via mouse behavior, pressing <strong>down arrow</strong> moves focus to the first item in the sub menu.</li>
+        <li>With focus on a menu item and a sub menu opened via mouse behavior, pressing <strong>up arrow</strong> moves focus to the last item in the sub menu.</li>
+        <li>With focus on a submenu item, the user must use <strong>arrows or the Escape key</strong> to progressively close submenus and move up to the parent menu item(s).</li>
+        <li>At the top level, <strong>Escape key</strong> closes any sub menus and keeps focus at the top level menu.</li>
+    </ul>
+    <hr/>
+    <!-- MENU BUTTON -->
+    <li>
+    <h2><a name="menubutton">Menu Button</a></h2>
+    <ul>
+        <li><strong>Space or Enter</strong> - With focus on the button pressing space or enter will toggle the display of the drop-down menu. Focus remains on the button.</li>
+        <li><strong>Down Arrow</strong>
+        <ul>
+            <li>With focus on the button and no drop down menu displayed, pressing <strong>down arrow</strong> will open the drop-down menu and move focus into the menu and onto the first menu item.</li>
+            <li>With focus on the button and the drop-down menu open, pressing <strong>down arrow</strong> will move focus into the menu onto the first menu item.</li>
+        </ul>
+        </li>
+        <li><strong>Up and down arrow</strong> - With focus on the drop-down menu, the <strong>up and down arrow keys</strong> move focus within the menu items, &quot;wrapping&quot; at the top and bottom.</li>
+        <li><strong>Escape</strong> - With focus on the drop-down menu, pressing <strong>escape</strong> closes the menu and returns focus to the button.</li>
+        <li><strong>Tab Key</strong>
+        <ul>
+            <li>With focus on the button pressing the <strong>tab key</strong> will take the user to the next tab focusable item on the page.</li>
+            <li>With focus on the drop-down menu, pressing the <strong>tab</strong> key will take the user to the next tab focusable item on the page. Note that this may be difficult to achieve on a web page.</li>
+        </ul>
+        </li>
+        <li><strong>Typing a letter (printable character) key</strong> moves focus to the next instance of a visible node whose title begins with that printable letter.</li>
+    </ul>
+    </li>
+    <hr/>
+    <li>
+    <h2><a name="popupmenu">Popup Menu</a></h2>
+    </li>
+    <p>(<a href="https://web.archive.org/web/20130127004544/http://dev.aol.com/downloads/kbd-nav--popup-tool-bubble-022808.html">Complete proposal from Earl Johnson</a>)</p>
+    <p>Example: The keyboard navigation for this widget was designed to work for both the popup and menubar menu widgets. The goal was to present a desktop paradigm for posting and dismissing menu widgets.</p>
+    <ul>
+        <li><strong>Shift F10</strong>
+        <ul>
+            <li>Posts the Popup Menu Widget When it is used as a <a href="https://web.archive.org/web/20130127004544/http://en.wikipedia.org/wiki/Context_menu">Contextual Menu</a>.</li>
+            <li>Place input focus on the first available menuitem in the Popup Menu.</li>
+            <li><strong>Note:</strong> The Browser's Contextual Menu pops up if the element with input focus does not have a Popup Menu attached.</li>
+            <li><strong>Note:</strong> Experiment indicated that Javascript is able to re-purpose to post the widget's popup menu instead of the browser's.</li>
+            <li><strong>Note:</strong> Shift F10 is used by IE to &quot;Display a shortcut menu for a link&quot;. In IE7 and IE8 event.cancelBubble=true; and event.returnValue=false; will allow the re-purposing of keys used by the browser. In the case of IE6, you can not stop the bubble up of keys used by the browser, but can stop the bubble up to the OS. In the case of Firefox and other standard compliant browsers, event.stopPropagation(); and event.preventDefault(); will re-purpose the keys.</li>
+        </ul>
+        </li>
+        <li><strong>ESC</strong>
+        <ul>
+            <li>Causes no menu action and dismisses Popup Menu</li>
+            <li>Input focus is returned to the element from which the Popup Menu was called.</li>
+        </ul>
+        </li>
+        <li><strong>Up/Down Arrow</strong>
+        <ul>
+            <li>Moves input focus vertically between each menuitem</li>
+            <li>Input focus wraps from the last to the first menuitem on a Down key press and vice-versa when the Up key is pressed.</li>
+        </ul>
+        </li>
+        <li><strong>Right/Left Arrow</strong>
+        <ul>
+            <li>Where applicable, causes a sub-menu to post or un-post</li>
+            <li>Causes no action if there is no sub-menu</li>
+        </ul>
+        </li>
+        <li><strong>Enter</strong>
+        <ul>
+            <li>What occurs when Enter is pressed depends on the state the menu is in:
+            <ul>
+                <li>Posts the Popup Menu if input focus is on the element, or widget it is attached to, e.g., a menubutton, link, etc.:
+                <ul>
+                    <li>Input focus is placed on the first menuitem when the menu pops up.</li>
+                </ul>
+                </li>
+                <li>Dismisses the menu when input focus is on an active menuitem.</li>
+                <li>Nothing occurs if input focus is on a menuitem marked as disabled.</li>
+            </ul>
+            </li>
+        </ul>
+        </li>
+        <li><strong>End/Home</strong>
+        <ul>
+            <li>Moves input focus to the last or first menuitem</li>
+        </ul>
+        </li>
+        <li><strong>Page Down</strong>
+        <ul>
+            <li>Moves input focus to the first menuitem on the next view of the menu.</li>
+            <li>Moves input focus to the last menuitem on menus that display all their content in one view.</li>
+        </ul>
+        </li>
+        <li><strong>Page Up</strong>
+        <ul>
+            <li>Moves input focus to the last menuitem on the previous view of the menu.</li>
+            <li>Moves input focus to the first menuitem on menus that display all their content in one view.</li>
+        </ul>
+        </li>
+        <li><strong>Tab</strong>
+        <ul>
+            <li>One of the following occurs:
+            <ul>
+                <li>Moves input focus between elements in the Popup Menu's tabbing order.
+                <ul>
+                    <li>Input focus stays in the Popup Menu until one of the following occurs:
+                    <ul>
+                        <li>ESC is pressed.</li>
+                        <li>Enter is pressed when input focus is on an interactive widget/element.</li>
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+                <!-- <li>Moves input focus to the next tab able element in the content's tabbing order if the following applies:</li>  <ul>   <li>Popup Menu is posted.</li>   <li>It contains no tab navigable elements in it.</li>  </ul> -->  </ul>
+                </li>
+            </ul>
+            </li>
+            <li><strong>Typing a letter (printable character) key</strong> moves focus to the next instance of a visible node whose title begins with that printable letter.</li>
+        </ul>
+        <hr/>
+        <li>
+        <h2><a name="popuphelp">Popup Help (aka Bubble Help)</a></h2>
+        </li>
+        <p>(<a href="https://web.archive.org/web/20130127004544/http://dev.aol.com/downloads/kbd-nav--popup-tool-bubble-022808.html">Complete proposal from Earl Johnson</a>)</p>
+        <p>Popup Help contains more descriptive, or actionable, help-like text and elements. It may contain, and was designed to handle, interactive elements such as a button, link, or text field. It is essentially a Popup Menu with un-necessary keystrokes turned off. The key sequence for posting Popup Help was to take advantage of F1's tie to the Help paradigm (F1 calls up application Help for example).</p>
+        <ul>
+            <li><strong>Control F1</strong>
+            <ul>
+                <li>Posts the Popup Help widget.</li>
+                <li>Input focus is placed on the first interactive element in the Popup Help.</li>
+                <li><strong>Note:</strong> Control F1 is used by IE to &quot;Display a help dialog box&quot;. In IE7 and IE8 event.cancelBubble=true; and event.returnValue=false; will allow the re-purposing of keys used by the browser. In the case of IE6, you can not stop the bubble up of keys used by the browser, but can stop the bubble up to the OS. In the case of Firefox and other standard compliant browsers, event.stopPropagation(); and event.preventDefault(); will re-purpose the keys.</li>
+                <li><strong>Note:</strong> With the exception of Control F1 to bring up Popup Help this widget is very similar to <a href="#dialogmodal">Dialog (Modal)</a> and or <a href="#dialognonmodal">Dialog (Non-Modal)</a> and or <a href="#dialogtooltip">Dialog (tooltip)</a> described above.</li>
+            </ul>
+            </li>
+            <li><strong>ESC</strong>
+            <ul>
+                <li>Causes no menu action and dismisses Popup Help</li>
+                <li>Input focus is returned to the element, or widget the Popup Help was called by</li>
+                <li>Pressing Enter when input focus is on the &quot;X&quot; glyph acts the same as pressing ESC.</li>
+            </ul>
+            </li>
+            <li><strong>Tab</strong>
+            <ul>
+                <li>One of the following occurs:
+                <ul>
+                    <li>Modal behavior
+                    <ul>
+                        <li>Moves input focus between elements in the Popup Help's tabbing order.
+                        <ul>
+                            <li>Input focus stays in the Popup Help until one of the following occurs:
+                            <ul>
+                                <li>ESC is pressed.</li>
+                                <li>Enter is pressed when input focus is on an interactive widget/element.</li>
+                            </ul>
+                            </li>
+                        </ul>
+                        </li>
+                    </ul>
+                    </li>
+                    <li>Non-Modal behavior
+                    <ul>
+                        <li>Moves input focus to the next tab able element in the tabbing order if the following applies:
+                        <ul>
+                            <li>Popup Help is posted.</li>
+                            <li>It contains no tab navigable elements in it.</li>
+                        </ul>
+                        </li>
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+            </ul>
+            </li>
+            <li><strong>Shift Tab</strong>
+            <ul>
+                <li>As with other keyboard conventions described here, the Shift Tab has the effect of moving the focus up rather than down and follows the same conventions as described for the modal and non-modal Tab key above.</li>
+            </ul>
+            </li>
+            <li><strong>Enter</strong>
+            <ul>
+                <li>Activates the element in the Popup Help that has input focus, if applicable, then dismisses the popup.
+                <ul>
+                    <li>Input focus should be placed on the appropriate element after the user presses the Enter key.
+                    <ul>
+                        <li>The appropriate place to move input focus to will not always be the parent element the Popup Help was called by.</li>
+                    </ul>
+                    </li>
+                    <li>Nothing occurs if input focus is on an element that has no associated action.</li>
+                </ul>
+                </li>
+            </ul>
+            </li>
+            <li><strong>F6</strong>
+            <ul>
+                <li>In the non-modal instance, the F6 key can be used to move focus between the application and the open non-modal window. This is also the behavior described in <a href="#dialognonmodal">Dialog (Non-Modal)</a> above.</li>
+            </ul>
+            </li>
+        </ul>
+        <hr/>
+        <!-- RADIO BUTTON -->
+        <li>
+        <h2><a name="radiobutton">Radio Button</a></h2>
+        </li>
+        <p>Example: An option in single-select list (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#radio">ARIA Radio</a>). A group of radio controls (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#radiogroup">ARIA Radiogroup</a>).</p>
+        <ul>
+            <li><strong>Tab key</strong> will enter the radio group.
+            <ul>
+                <li>When tabbing into a group focus goes to the selected button. If none is selected it goes to the first button in the group unless you are shift tabbing, which goes to the last button in the group. Or in ARIA it can go to the radio group. HTML does not have a radio group.</li>
+                <li>Tab again will exit the radio group.</li>
+            </ul>
+            </li>
+            <li><strong>Down/Right</strong> moves forward in the group.</li>
+            <li><strong>Up/Left</strong> moves backwards in the group
+            <ul>
+                <li>When the arrow moves focus, the button is selected.</li>
+            </ul>
+            </li>
+            <li><strong>Down/Right arrow</strong> at bottom should wrap to beginning of the set</li>
+            <li><strong>Up/Left arrow</strong> at top should wrap to end of the set</li>
+            <li><strong>Space bar</strong> is a toggle selected/unselected.</li>
+            <li><strong>Control  Arrow</strong> moves through the options without updating content or selecting the button.</li>
+        </ul>
+        <hr/>
+        <!-- RICH TEXT EDITOR -->
+        <li>
+        <h2><a name="richtext">Rich Text Editor</a></h2>
+        </li>
+        <p>Example: Inputs that allow free-form text as their value (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#textbox">ARIA Textbox</a>).</p>
+        <ul>
+            <li><strong>Note:</strong> The edit control is provided by the browser. The edit control provides the keyboard support for navigating, adding, removing and selecting text so that behavior is not defined by the DHTML Style Guide.</li>
+            <li><strong>Note:</strong> The browser should also provide a keyboard mechanism for navigating into and out of the edit control.  Within most browsers the edit control is put into the tab order of the page and can be navigated into, out of, and through using the tab and shift-tab keys like any standard form control.</li>
+            <li><strong>Note:</strong> A rich text editor widget needs to provide a user interface for interacting with the browser provided edit control. Interaction between the user interface and editor is defined here assuming that a toolbar is used.</li>
+            <li><strong>Tab and Shift-Tab</strong> If not provided by the browser, the rich text editor widget must provide a keyboard mechanism to move into and out of the edit control. Tab and shift-tab are the recommended keystrokes. The toolbar or other user interface component associated with the editor is placed in the tab order immediately before the editor. To set an attribute on text within the edit control the user sets focus into the edit control, moves the insertion point, selects text and presses shift-tab to move focus from the editor back to the toolbar. The user navigates through the toolbar (see toolbar behavior) to a desired attribute and invokes that attribute. When an attribute is invoked, that attribute is applied to the selected text in the editor and focus moves back into the editor at the previous insertion point with the selection intact.</li>
+            <li><strong>Options:</strong>
+            <ul>
+                <li>Rather than using shift-tab to move focus from within the editor to the toolbar, another key combination could be used (alt-up arrow, ctrl-shift-letter, etc.). This would eliminate the need to put the user interface control (in this example a toolbar) into the tab order immediately before the editor component. However, there are drawbacks to using a different keystroke to navigate to the user interface:
+                <ol>
+                    <li>It is not as &quot;discoverable&quot; as relying on the standard tab/shift-tab behavior;</li>
+                    <li>It is difficult to find key combinations which are not already captured by the browser or assistive technology.</li>
+                    <li>Focus could stay within the toolbar after the user invokes an attribute. The user would then have to press an additional key to move focus back into the editor. This would allow multiple attributes to be set on the current selection without having to return back to the user interface but it would add an extra key sequence after setting just a single attribute. Requiring a keystroke to move focus back into the editor would also require modifying the toolbar behavior to intercept this keystroke and to know how to set focus back to the component (the editor) that the toolbar is associated with.</li>
+                </ol>
+                </li>
+            </ul>
+            </li>
+            <li><strong>Note: </strong> Optionally, if the developer wishes to provide the ability to insert a tab into the document, it is recommended one of the following methods be used.
+            <ul>
+                <li>Provide indent and outdent buttons in the menu. Keyboard shortcuts to the buttons should be <strong>Control  M</strong> for indent and <strong>Control  Shift  M</strong> for outdent.</li>
+                <li>Provide a button in the menu to toggle the use of Tab between the two modes. If this button is used, then <strong>Control  M</strong> is recommended as a keyboard shortcut to toggle the button.</li>
+            </ul>
+            </li>
+        </ul>
+        <hr/>
+        <!-- SLIDER -->
+        <li>
+        <h2><a name="slider">Slider</a></h2>
+        </li>
+        <p>Example: A user input where the user selects a value from within a given range.</p>
+        <p>A slider represents the current value and range of possible values via the size of the slider and position of the thumb. It is typically possible to add or subtract to the value by using directional keys such as arrow keys (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#slider">ARIA Slider</a>).</p>
+        <ul>
+            <li><strong>Right and Up Arrows</strong> increase the value of the slider.</li>
+            <li><strong>Left and Down Arrows</strong> decrease the value of the slider.</li>
+            <li><strong>Home and End</strong> move to the minimum and maximum values of the slider.</li>
+            <li><strong>Tab</strong> into and out of the slider.</li>
+            <li><strong>Page Up and Page Down</strong> optionally increment or decrement the slider by a given amount.</li>
+            <li><strong>Note:</strong> Focus is placed on the slider. (The visual object that the mouse user would move, also known as the thumb.)</li>
+            <li><strong>Note:</strong> Localization for right to left languages may wish to reverse the left and right arrows.</li>
+        </ul>
+        <hr/>
+        <!-- SLIDER Multi-Thumb -->
+        <li>
+        <h2><a name="slidertwothumb">Slider (Multi-Thumb)</a></h2>
+        </li>
+        <p>Example: This three thumb slider shows a histogram of the range of colors in a photo. Moving the end sliders chops out the dark and light areas while the middle thumb shifts the brightness of the overall image lighter or darker (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#slider">ARIA Slider</a>). <br/>
+        <img src="https://web.archive.org/web/20130127004544im_/http://dev.aol.com/images/slider1.bmp" alt="Screen shot shows 3 thumb slider."/></p>
+        <p>This is a four thumb slider. Like the previous one we can compress the range of colors by modifying the end points but this one has two middle thumbs which does something magic that as a non-artist I can't really describe. Something to do with how many degrees around the color wheel the palette is shifted, or something. <br/>
+        <img src="https://web.archive.org/web/20130127004544im_/http://dev.aol.com/images/slider2.bmp" alt="Screen shot shows 4 thumb slider."/></p>
+        <ul>
+            <li><strong>Tab</strong> to the first slider thumb.</li>
+            <li><strong>Second tab</strong> moves to next slider thumb.</li>
+            <li><strong>Third tab</strong> moves to the next slider thumb or if there are no more, it moves to the next tab stop on the page.</li>
+            <li><strong>Shift-tab</strong> moves backwards through the tabs.</li>
+            <li><strong>With focus on a thumb:</strong> Same as <a href="#slider">Slider</a> above.
+            <ul>
+                <li><strong>Right and Up Arrows</strong> increases the value of the slider constrained by the    value of the other thumb.</li>
+                <li><strong>Left and Down</strong> Arrows decrease the value of the slider constrained by the    value of the other thumb.</li>
+                <li><strong>Home and End</strong> move to the minimum and maximum values of the slider    constrained by the value of the other thumb.</li>
+                <li><strong>Page Up and Page Down</strong> optionally increment or decrement the slider by a    given amount, constrained by the value of the other thumb.</li>
+            </ul>
+            </li>
+            <li><strong>Note:</strong> Focus is placed on one of the thumbs of the slider.</li>
+            <li><strong>Note:</strong> All thumbs are in the tab order.</li>
+            <li><strong>Note:</strong> Localization for right to left languages may wish to reverse the left  and right arrows.</li>
+            <li><strong>Note:</strong> If the current value of a slider crosses over one of the other sliders, the tab order remains the same. Example. If a high range slider is moved so that its current value is below the current value of a low range slider, the thumb will visually appear to be before the low range slider. This should not change the tab order of the slider.</li>
+        </ul>
+        <hr/>
+        <!-- SPINBUTTON -->
+        <li>
+        <h2><a name="spinbutton">Spinbutton</a></h2>
+        </li>
+        <p>A form of range that expects a user to select from amongst discrete choices (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#spinbutton">ARIA Spinbutton</a>).</p>
+        <p>A spinbutton typically allows the user to select from the given range through the use of an up and down button on the keyboard. Visibly, the current value is incremented or decremented until a maximum or minimum value is reached.</p>
+        <ul>
+            <li><strong>Right and Up Arrows</strong> increase the value.</li>
+            <li><strong>Left and Down Arrows</strong> decrease the value.</li>
+            <li><strong>Home and End key</strong> move to the maximum or minimum values</li>
+            <li><strong>Optional Page Up and Page Down</strong> incrementally increase or decrease the value</li>
+            <li><strong>Tab key</strong> moves into and out of the widget</li>
+            <li><strong>Note:</strong> Focus should remain on the edit field</li>
+            <li><strong>Note:</strong> Localization for right to left languages may wish to reverse the left and right arrows.</li>
+        </ul>
+        <hr/>
+        <!-- TAB PANEL -->
+        <li>
+        <h2><a name="tabpanel">Tab Panel</a></h2>
+        </li>
+        <p>Example: A container for the resources associated with a tab (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#tabpanel"> ARIA Tabpanel</a>).</p>
+        <p>Commentary: the aria-expanded state is used to distinguish between an Accordion panel's expanded vs. collapsed state. An AT should be sensitive to aria-expanded, and relay it meaningfully to the user. Here are some role/state combinations and their meaning:</p>
+        <ul>
+            <li>(role=tablist  aria-multiselectable=true) is an Accordion</li>
+            <li>(role=tablist  aria-multiselectable=false) is a Tab Panel</li>
+            <li>(role=tablist  aria-multiselectable=true) and (focus on role=tab  aria-expanded=true) is an Accordion Header whose panel is expanded</li>
+            <li>(role=tablist  aria-multiselectable=false) and (focus on role=tab  aria-expanded=true) is a Tab whose panel is expanded</li>
+            <li>(role=tablist  aria-multiselectable=true) and (focus on role=tab  aria-expanded=false) is an Accordion Header whose panel is collapsed.</li>
+        </ul>
+        <p>&nbsp;</p>
+        <ul>
+            <li><strong>Down Arrow/Right Arrow</strong>
+            <ul>
+                <li>When focus is on the tab or accordion header, a press of down/right will move focus to the next logical accordion Header or Tab page.</li>
+                <li>When focus reaches the last header/tab page, further key presses will have optionally wrap to the first header</li>
+                <li>In the case of a tab the corresponding tab panel will activate</li>
+            </ul>
+            </li>
+            <li><strong>Up Arrow/Left Arrow</strong>
+            <ul>
+                <li>When focus is on the tab or accordion header, a press of up/left will move focus to the previous logical accordion Header or Tab page.</li>
+                <li>When focus reaches the first header/tab page, further key presses will optionally wrap to the first header.</li>
+                <li>In the case of a tab the corresponding tab panel will activate.</li>
+            </ul>
+            </li>
+            <li><strong>Enter/Space</strong>
+            <ul>
+                <li>When focus is on an Accordion Header, this keystroke toggles the expansion of the corresponding panel.
+                <ul>
+                    <li>If collapsed, the panel is expanded, and its aria-expanded state is set to 'true'.</li>
+                    <li>If expanded, the panel is collapsed and its aria-expanded state is set to 'false'.</li>
+                </ul>
+                </li>
+                <li>When focus is on a Tab in a Tab Panel, this keystroke has no effect.
+                <ul>
+                    <li>Note: Tab Panel panels are auto-expanded when their corresponding Tab receives focus, and auto-collapsed when focus moves to another Tab.</li>
+                </ul>
+                <ul>
+                    <li>In this case, the behaviour of depends on the role of the interactive element, and is defined elsewhere in this document (cf., Menu).</li>
+                </ul>
+                </li>
+                When focus is on any other interactive element, this keystroke activates, or selects, that element.                </ul>
+                </li>
+                <li><strong>Control Up Arrow/Left Arrow</strong>
+                <ul>
+                    <li>Moves focus from anywhere in the accordion content or tab page to its associated accordion Header or Tab respectively.</li>
+                    <li>Note: This key combination is useful on browsers which already implement Control PageUp/PageDown for other functions such as switching browser tabs.</li>
+                </ul>
+                </li>
+                <li><strong>Control PageUp</strong>
+                <ul>
+                    <li>When focus is inside of a tab panel / accordion pane, pressing ctrl-pageup moves focus to the tab or accordion header of the previous tab/accordion pane.</li>
+                    <li>When focus is in the first tab panel in the tab list or the first accordion header content, pressing ctrl-pageup will optionally move focus to the last tab in the tab list or the last accordion header.</li>
+                    <li>In the case of being in a tab panel the previous pane will be activated. In the case of an accordion focus will simply move to the header and will require Enter/space to expand/collapse the accordion pane.</li>
+                </ul>
+                </li>
+                <li><strong>Control PageDown</strong>
+                <ul>
+                    <li>When focus is inside of a tab panel / accordion pane, pressing ctrl-pagedown moves focus to the tab or accordion header of the next tab/accordion pane.</li>
+                    <li>When focus is in the last tab panel in the tab list or the last accordion header content, pressing ctrl-pagedown will optionally move focus to the first tab in the tab list or the first accordion header.</li>
+                    <li>In the case of being in a tab panel the next pane will be activated. In the case of an accordion focus will simply move to the header and will require Enter/space to expand/collapse the accordion pane.</li>
+                </ul>
+                </li>
+                <li><strong>Tab</strong>
+                <ul>
+                    <li>When focus is on an Accordion Header / Tab, a TAB keystroke will move focus in the following manner:
+                    <ol>
+                        <li>If interactive glyphs or menus are present in the Accordion Header / Tab, focus will move to each of these glyphs or menus in order.</li>
+                        <li>When the corresponding Tab or Accordion panel is expanded (its aria-expanded state is 'true'), then focus moves to the first focusable element in the panel. (Note: for Tab Panel, the corresponding panel is expanded automatically when focus is on the Tab).</li>
+                        <li>If the Accordion panel is collapsed (its aria-expanded state is 'false', or missing), OR, when the last interactive element of an expanded Tab or Accordion panel is reached, the next TAB keystroke will move focus as follows:
+                        <ul>
+                            <li>If multi-select is enabled and a subsequent Accordion panel is already expanded, focus will move to the first focusable element in this subsequent panel.</li>
+                            <li>If multi-select is enabled and no subsequent Accordion panel is expanded, OR, if multi-select is disabled, focus will move to the first focusable element outside the Accordion or Tab Panel component.</li>
+                        </ul>
+                        </li>
+                    </ol>
+                    </li>
+                </ul>
+                </li>
+                <li><strong>Shift Tab</strong> Generally the reverse of Tab</li>
+                <li><strong>Shift F10</strong> See Global Section</li>
+                <li><strong>Alt Del</strong>
+                <ul>
+                    <li>When deletion is allowed, with focus anywhere within the tab panel or tab, pressing alt-del will delete the current tab and tab panel from the tabbed interface control. If additional tabs remain in the tabbed interface, focus goes to the next tab in the tab list. If no additional tabs remain, then focus moves to the last place that held focus in the previous tab panel.</li>
+                    <li>An alternative to providing a keystroke to close a tab is to provide a context menu that is associated with the tab title. When focus is on the tab, pressing shift-F10 or pressing the right mouse button will open a context menu with the close choice.</li>
+                    <li>This would be unlikely to be implemented for an accordion but could be implemented if required in a similar manner.</li>
+                    <li>A warning should be give to the user before allowing the delete to occur.</li>
+                </ul>
+                </li>
+                <li><strong>Esc</strong> See Global button/menu actions</li>
+            </ul>
+            <hr/>
+            <!-- TOOL BAR -->
+            <li>
+            <h2><a name="toolbar">Tool Bar</a></h2>
+            </li>
+            <p>Example: A collection of commonly used functions represented in compact visual form (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#toolbar">ARIA Toolbar</a>).</p>
+            <p>The toolbar is often a subset of functions found in a menubar, designed to reduced user effort in using these functions.</p>
+            <ul>
+                <li><strong>Tab</strong> moves focus to the first enabled toolbar button.</li>
+                <li><strong>Tab Again</strong> moves focus out of the toolbar</li>
+                <li><strong>Left and Right Arrow</strong> keys navigate to the enabled buttons in the toolbar</li>
+                <li><strong>Note:</strong> Direction may need to be adjusted for Right to Left languages</li>
+                <li><strong>Note:</strong> There has been a lot of discussion around disabled buttons. The question is, &quot;Should they be focusable or not&quot;? Visually, these are grayed out and are not placed in the tab order, but the question remains how does a screen reader user discover these buttons if they are not focusable? Generally there are a number of ways this can be handled.
+                <ol>
+                    <li>In software applications like MS word, the toolbars are not reachable by the keyboard user, but the features are available on one of the drop down menus.</li>
+                    <li>A user could be asked to set a preference to indicate they want the disabled buttons surfaced.</li>
+                    <li>The can be disabled and not discoverable until they are activated. (This is the way tool bars currently work)</li>
+                    <li>They can be focusable, but read by the screen reader as disabled.</li>
+                </ol>
+                </li>
+            </ul>
+            <hr/>
+            <!-- Tooltip -->
+            <li>
+            <h2><a name="tooltip">Tooltip Widget</a></h2>
+            </li>
+            <p>Example: A popup that displays a description for an element when a user passes over or rests on that element. Supplement to the normal tooltip processing of the user agent (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#tooltip">ARIA Tooltip</a>).</p>
+            (<a href="https://web.archive.org/web/20130127004544/http://dev.aol.com/downloads/kbd-nav--popup-tool-bubble-022808.html">Complete proposal from Earl Johnson</a>)
+            <p>The tooltip widget should popup automatically when the user gives input focus to the widget or element it is tied to. The tooltip widget can be dismissed by pressing the ESC key or by other methods noted below. The Tooltip Widget differs from the <a href="#dialogtooltip">Dialog (Tooltip)</a> in that it does not receive focus at any time.</p>
+            <ul>
+                <li><strong>ESC:</strong> Dismisses the Tooltip.</li>
+                <li><strong>Note:</strong> The trigger element to which the tooltip is attached, e.g., a link, should never actually lose input focus.</li>
+                <li><strong>Note:</strong> If the tooltip is invoked when the trigger element gets focus, then it should be dismissed when it no longer has focus (onBlur). If the tooltip is invoked with mouseIn, then it should be dismissed with a mouseOut.</li>
+                <li><strong>Note:</strong> If more then one widget uses the same keys, e.g., Esc, then they should be handled in a Last In First Out (LIFO) manner.</li>
+            </ul>
+            <hr/>
+            <!-- TREEVIEW -->
+            <li>
+            <h2><a name="treeview">Treeview</a></h2>
+            </li>
+            <p>Example: A form of a list having groups inside groups, where sub trees can be collapsed and expanded (<a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#tree">ARIA Tree</a>).</p>
+            <ul>
+                <li><strong>Up and down arrow</strong> keys move between visible nodes</li>
+                <li><strong>Left arrow</strong> key on an expanded node closes the node</li>
+                <li><strong>Left arrow</strong> key on a closed or end node moves focus to the node's parent</li>
+                <li><strong>Right arrow</strong> key expands a closed node, moves to the first child of an open node, or does nothing on an end node.</li>
+                <li><strong>Enter key</strong> performs the default action on end nodes.</li>
+                <li><strong>Typing a letter (printable character) key</strong> moves focus to the next instance of a visible node whose title begins with that printable letter.</li>
+                <li><strong>Home key</strong> moves to the top node in the tree view</li>
+                <li><strong>End key</strong> moves to the last visible node in the tree view</li>
+                <li><strong>Ctrl Arrow</strong> to an item with the keyboard focuses the item (but does not select it). Previous selections are maintained.</li>
+                <li><strong>Ctrl Spacebar</strong> with focus on an item toggles the selection of the item</li>
+                <li><strong>Shift UpArrow</strong> - Extends selection up one node</li>
+                <li><strong>Shift DownArrow</strong> - Extends selection down one node</li>
+                <li><strong>Shift Home</strong> - Extends selection up to the top-most node</li>
+                <li><strong>Shift PageDown</strong> - Extends selection down to the last node</li>
+                <li><strong>*(asterisk)</strong> on keypad - Expands all nodes</li>
+                <li><strong>Note: </strong>It may also be advisable to allow more then 1 printable character to be typed. In this case focus is moved to the next instance of a visible node whose title matches the string typed. Generally when this is used, it includes a timer which will reset the string thus allowing another search. For this reason, this technique is not recommended unless the user may set a preference to increase the time allowed.</li>
+            </ul>
+            <hr/>
+            <!-- WINDOW SPLITTER -->
+            <li>
+            <h2><a name="windowsplitter">Window Splitter</a></h2>
+            </li>
+            <p>Example: A splitter is a visible separator between sections of a Window which can be used to modify the size of the panes.</p>
+            <ul>
+                <ul>
+                    <li><strong>Tab</strong> Like other widgets, the tab key is used to move focus to the splitter. It should appear in the normal tab order of the page. A second tab will move focus to the next tabbable item on the page.</li>
+                    <li><strong>Left and Right Arrow</strong> In the case of a vertical splitter these keys will move the splitter to the left and to the right.</li>
+                    <li><strong>Up and Down Arrow</strong> In the case of a horizontal splitter these keys will move the splitter up and down.</li>
+                    <li><strong>End</strong> Moves splitter to the maximum size of the region.</li>
+                    <li><strong>Home</strong>Moves splitter to the minimum size of the region</li>
+                    <li><strong>Enter</strong> Restore splitter to previous position (undo Home or End)</li>
+                    <li><strong>F6 </strong> Optionally is recommended to rotate through the window panes.</li>
+                    <li><strong>Control  F6</strong> Optionally brings focus directly to the splitter. Pressing Control  F6 again would rotate forward through additional splitters located on the page.</li>
+                    <li><strong>Shift  Control  F6</strong> Optionally reverses the direction rotating backwards through additional splitters located on the page.</li>
+                </ul>
+                <li><strong>Note: </strong>Fixed size splitter simply omits implementation of the arrow keys</li>
+                <li><strong>Note: </strong>The group recommends unique naming of the window splitter to avoid the confusion that could be created by multiple splitters located on the same window.</li>
+                <li><strong>Note: </strong>The group recommends a splitter default position restore option to be available in a contextual menu.</li>
+            </ul>
+            <hr/>
+            <!-- Wizard -->
+            <li>
+            <h2><a name="wizard">Wizard</a></h2>
+            </li>
+            <p>Example: A set of pages that create a signup wizard.</p>
+            <ul>
+                <li>A Wizard can be done in several ways. Any are valid
+                <ol>
+                    <li>Method 1: Like a <a href="#toolbar">Tool Bar</a></li>
+                    <li>Method 2: Controls as Default Actions
+                    <ul>
+                        <li><strong>ESC</strong> cancels the wizard.</li>
+                        <li><strong>Return or Enter</strong> invokes the &quot;next&quot; action; If the last page, it invokes &quot;finish&quot;</li>
+                    </ul>
+                    </li>
+                    <li>Method 3: Hot Keys
+                    <ul>
+                        <li><strong>Control Alt N</strong> next, finish</li>
+                        <li><strong>Control Alt P</strong> previous</li>
+                        <li><strong>Escape</strong> cancel, exit without saving</li>
+                        <li><strong>Control Alt R</strong> reset current page to default settings</li>
+                        <li><strong>Control Alt S</strong> save and exit</li>
+                        <li><strong>Note:</strong> Letters should be localized.</li>
+                    </ul>
+                    </li>
+                    <li>Method 4: Like a <a href="#dialognonmodal">Dialog</a></li>
+                </ol>
+                </li>
+            </ul>
+            <hr/>
+        </ol>
+        <!-- GLOBAL Recommendations -->
+        <h2><a name="global">Global Recommendations</a></h2>
+        <p>The following may apply to some or all widgets.</p>
+        <ul>
+            <li><strong>Control  Z</strong> Optionally a developer may choose to implement undo functionality as needed.  It is recommended that Control  Z be used.</li>
+            <li><strong>Control  Y</strong> Optionally a developer may choose to implement redo functionality as needed.  It is recommended that Control  Y be used.</li>
+            <li><strong>Control  C</strong> Copies to clipboard</li>
+            <li><strong>Control  V</strong> Pastes from clipboard</li>
+            <li><strong>Control  X</strong> Copies to clipboard and cuts</li>
+            <li><strong>Shift  F10</strong> is used to bring up an associated <a href="#popupmenu">Popup Menu</a></li>
+            <li><strong>Widgets within Widgets</strong> The general navigation model is for a user to tab to a widget, interact with the controls in that widget and then tab to move focus to the next widget in the tab order. By extension, when the construct of a widget contains another widget, tab will move focus to the contained widget because it is the next item in the tab order. This continues down the layers of widgets until the last widget is reached. For example: We have two widgets A and B on a page. Widget A contains within it Widget C and Widget C contains within it Widget D. When tabbing, focus would land on Widget A, then another tab would focus on C and then another tab would focus on widget D. Because D is the the last widget in C and C is the last widget in A one more tab would move focus to B.</li>
+            <li><strong>Bidirectional Typography</strong> Many of the widget keyboard recommendations include directional navigation which assumes a left to right reading order. Implementors need to be aware that these relative directions will need to be reversed when the language typography runs from right to left.</li>
+        </ul>
+        <hr/>
+        <!-- GAP ANALYSIS -->
+        <h2><a name="gap">Gap Analysis</a> (Styleguide vs <a href="https://web.archive.org/web/20130127004544/http://www.w3.org/WAI/PF/aria/#parentrole">ARIA Roles</a>)</h2>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>ARIA Role</th>
+                    <th>Styleguide</th>
+                    <th>Definition</th>
+                </tr>
+                <tr>
+                    <td>Alert</td>
+                    <td><a href="#alert">Alert</a></td>
+                    <td>A message with important information.</td>
+                </tr>
+                <tr>
+                    <td>Alert Dialog</td>
+                    <td><a href="#dialogmodal">Dialog (Modal)</a>, <a href="#dialognonmodal">Dialog (Non-Modal)</a>, <a href="#dialogtooltip">Dialog (Tooltip)</a></td>
+                    <td>A separate window (may be simulated) with an alert, where initial focus goes to the window or a control within it.</td>
+                </tr>
+                <tr>
+                    <td>Application</td>
+                    <td>N/A</td>
+                    <td>A software unit executing a set of tasks for its users.</td>
+                </tr>
+                <tr>
+                    <td>Article</td>
+                    <td><a href="#landmarks">Landmark</a></td>
+                    <td>Represents a section of a page consisting of a composition forming an independent part of a document, page, or site.</td>
+                </tr>
+                <tr>
+                    <td>Banner</td>
+                    <td><a href="#landmarks">Landmark</a></td>
+                    <td>A region that contains the prime heading or internal title of a page.</td>
+                </tr>
+                <tr>
+                    <td>Button</td>
+                    <td><a href="#button">Button</a></td>
+                    <td>Allows for user-triggered actions</td>
+                </tr>
+                <tr>
+                    <td>Checkbox</td>
+                    <td><a href="#checkbox">Checkbox</a></td>
+                    <td>A control that has three possible values, (true, false, mixed).</td>
+                </tr>
+                <tr>
+                    <td>Columnheader</td>
+                    <td>N/A</td>
+                    <td>A table cell containing header information for a column.</td>
+                </tr>
+                <tr>
+                    <td>Combobox</td>
+                    <td><a href="#combobox">Combobox</a></td>
+                    <td>Combobox is a presentation of a select, where users can type to select an item.</td>
+                </tr>
+                <tr>
+                    <td>Complementary</td>
+                    <td><a href="#landmarks">Landmark</a></td>
+                    <td>Any section of the document that supports but is separable from the main content, but is meaningful on its own even when separated from it.</td>
+                </tr>
+                <tr>
+                    <td>Contentinfo</td>
+                    <td>N/A</td>
+                    <td>Meta information which applies to the first immediate ancestor whose role is not presentation.</td>
+                </tr>
+                <tr>
+                    <td>Definition</td>
+                    <td>N/A</td>
+                    <td>A definition of a term or concept.</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>N/A</td>
+                    <td>Descriptive content for a page element which references this element via describedby.</td>
+                </tr>
+                <tr>
+                    <td>Dialog</td>
+                    <td><a href="#dialogmodal">Dialog (Modal)</a>, <a href="#dialognonmodal">Dialog (Non-Modal)</a>, <a href="#dialogtooltip">Dialog (Tooltip)</a></td>
+                    <td>A dialog is a small application window that sits above the application and is designed to interrupt the current processing of an application in order to prompt the user to enter information or require a response.</td>
+                </tr>
+                <tr>
+                    <td>Directory</td>
+                    <td><a href="#landmarks">Landmark</a></td>
+                    <td>A list of references to members of a single group.</td>
+                </tr>
+                <tr>
+                    <td>Document</td>
+                    <td>N/A</td>
+                    <td>Content that contains related information, such as a book.</td>
+                </tr>
+                <tr>
+                    <td>Grid</td>
+                    <td><a href="#treegrid">Tree Grid</a>, <a href="#grid">Grid</a></td>
+                    <td>A grid contains cells of tabular data arranged in rows and columns (e.g., a table).</td>
+                </tr>
+                <tr>
+                    <td>Gridcell</td>
+                    <td><a href="#treegrid">Tree Grid</a>, <a href="#grid">grid</a></td>
+                    <td>A gridcell is a table cell in a grid. Gridcells may be active, editable, and selectable. Cells may have relationships such as controls to address the application of functional relationships.</td>
+                </tr>
+                <tr>
+                    <td>Group</td>
+                    <td><a href="#landmarks">Landmark</a></td>
+                    <td>A group is a section of user interface objects which would not be included in a page summary or table of contents by an assistive technology. See region for sections of user interface objects that should be included in a page summary or table of contents.</td>
+                </tr>
+                <tr>
+                    <td>Heading</td>
+                    <td><a href="#landmarks">Landmark</a></td>
+                    <td>A heading for a section of the page.</td>
+                </tr>
+                <tr>
+                    <td>Img</td>
+                    <td>N/A</td>
+                    <td>An img is a container for a collection elements that form an image.</td>
+                </tr>
+                <tr>
+                    <td>Link</td>
+                    <td><a href="#link">Link</a></td>
+                    <td>Interactive reference to a resource (note, that in [XHTML] 2.0 any element can have an href attribute and thus be a link)</td>
+                </tr>
+                <tr>
+                    <td>List</td>
+                    <td><a href="#listbox">Listbox</a></td>
+                    <td>Group of small items.</td>
+                </tr>
+                <tr>
+                    <td>Listbox</td>
+                    <td><a href="#listbox">Listbox</a></td>
+                    <td>A list box is a widget that allows the user to select one or more items from a list. Items within the list are static and may contain images.</td>
+                </tr>
+                <tr>
+                    <td>Listitem</td>
+                    <td><a href="#listbox">Listbox</a></td>
+                    <td>A single item in a list.</td>
+                </tr>
+                <tr>
+                    <td>Log</td>
+                    <td><a href="#landmarks">Landmark</a></td>
+                    <td>A region where new information is added and old information may disappear such as chat logs, messaging, game log or an error log. In contrast to other regions, in this role there is a relationship between the arrival of new items in the log and the reading order. The log contains a meaningful sequence and new information is added only to the end of the log, not at arbitrary points.</td>
+                </tr>
+                <tr>
+                    <td>Main</td>
+                    <td><a href="#landmarks">Landmark</a></td>
+                    <td>Main content in a document.</td>
+                </tr>
+                <tr>
+                    <td>Marque</td>
+                    <td>N/A</td>
+                    <td>A marquee is used to scroll text across the page.</td>
+                </tr>
+                <tr>
+                    <td>Math</td>
+                    <td>N/A</td>
+                    <td>Content that represents a mathematical expression.</td>
+                </tr>
+                <tr>
+                    <td>Menu</td>
+                    <td><a href="#menu">Menu</a>, <a href="#menubutton">Menu Button</a>, <a href="#popupmenu">PopupMenu</a></td>
+                    <td>Offers a list of choices to the user.</td>
+                </tr>
+                <tr>
+                    <td>Menubar</td>
+                    <td><a href="#menu">Menu</a>, <a href="#menubutton">Menu Button</a>, <a href="#popupmenu">PopupMenu</a></td>
+                    <td>A menubar is a container of menu items. Each menu item may activate a new sub-menu. Navigation behavior should be similar to the typical menu bar graphical user interface.</td>
+                </tr>
+                <tr>
+                    <td>Menuitem</td>
+                    <td><a href="#menu">Menu</a>, <a href="#menubutton">Menu Button</a>, <a href="#popupmenu">PopupMenu</a></td>
+                    <td>A link in a menu. This is an option in a group of choices contained in a menu.</td>
+                </tr>
+                <tr>
+                    <td>Menuitemcheckbox</td>
+                    <td><a href="#checkbox">Checkbox</a></td>
+                    <td>Defines a menuitem which is checkable (tri-state).</td>
+                </tr>
+                <tr>
+                    <td>Menuitemradio</td>
+                    <td><a href="#radiobutton">Radio Button</a></td>
+                    <td>Indicates a menu item which is part of a group of menuitemradio roles.</td>
+                </tr>
+                <tr>
+                    <td>Navigation</td>
+                    <td><a href="#listbox">Listbox</a></td>
+                    <td>A collection of links suitable for use when navigating the document or related documents.</td>
+                </tr>
+                <tr>
+                    <td>Note</td>
+                    <td>N/A</td>
+                    <td>The content is parenthetic or ancillary to the main content of the resource.</td>
+                </tr>
+                <tr>
+                    <td>Option</td>
+                    <td><a href="#listbox">Listbox</a></td>
+                    <td>A selectable item in a list represented by a select.</td>
+                </tr>
+                <tr>
+                    <td>Presentation</td>
+                    <td>N/A</td>
+                    <td>An element whose role is presentational does not need to be mapped to the accessibility API.</td>
+                </tr>
+                <tr>
+                    <td>Progressbar</td>
+                    <td>N/A</td>
+                    <td>Used by applications for tasks that take a long time to execute, to show the execution progress.</td>
+                </tr>
+                <tr>
+                    <td>Radio</td>
+                    <td><a href="#radiobutton">Radio Button</a></td>
+                    <td>A radio is an option in single-select list. Only one radio control in a radiogroup can be selected at the same time.</td>
+                </tr>
+                <tr>
+                    <td>RadioGroup</td>
+                    <td><a href="#radiobutton">Radio Button</a></td>
+                    <td>A group of radio controls.</td>
+                </tr>
+                <tr>
+                    <td>Region</td>
+                    <td>N/A</td>
+                    <td>Region is a large perceivable section on the web page.</td>
+                </tr>
+                <tr>
+                    <td>Row</td>
+                    <td><a href="#treegrid">Tree Grid</a>, <a href="#grid">Grid</a></td>
+                    <td>A row of table cells.</td>
+                </tr>
+                <tr>
+                    <td>Rowheader</td>
+                    <td><a href="#grid">Grid</a></td>
+                    <td>A table cell containing header information for a row.</td>
+                </tr>
+                <tr>
+                    <td>Search</td>
+                    <td><a href="#autocomplete">Auto Complete</a> &amp; <a href="#landmarks">Landmark</a></td>
+                    <td>The search tool of a web document.</td>
+                </tr>
+                <tr>
+                    <td>Separator</td>
+                    <td>N/A</td>
+                    <td>A line or bar that separates and distinguishes sections of content.</td>
+                </tr>
+                <tr>
+                    <td>Slider</td>
+                    <td><a href="#slider">Slider, Slider (Multi-Thumb)</a></td>
+                    <td>A user input where the user selects an input in a given range. This form of range expects an analog keyboard interface.</td>
+                </tr>
+                <tr>
+                    <td>Spinbutton</td>
+                    <td><a href="#spinbutton">Spinbutton</a></td>
+                    <td>A form of Range that expects a user selecting from discrete choices.</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td><a href="#landmarks">Landmark</a></td>
+                    <td>This is a container for process advisory information to give feedback to the user.</td>
+                </tr>
+                <tr>
+                    <td>Tab</td>
+                    <td><a href="#tabpanel">Tab Panel</a></td>
+                    <td>A header for a tabpanel.</td>
+                </tr>
+                <tr>
+                    <td>Tablist</td>
+                    <td><a href="#tabpanel">Tab Panel</a></td>
+                    <td>A list of tabs, which are references to tabpanels.</td>
+                </tr>
+                <tr>
+                    <td>Tab Panel</td>
+                    <td><a href="#tabpanel">Tab Panel</a></td>
+                    <td>Tabpanel is a container for the resources associated with a tab.</td>
+                </tr>
+                <tr>
+                    <td>Textbox</td>
+                    <td><a href="#richtext">Rich Text Editor</a></td>
+                    <td>Inputs that allow free-form text as their value.</td>
+                </tr>
+                <tr>
+                    <td>Timer</td>
+                    <td>N/A</td>
+                    <td>A numerical counter which indicates an amount of elapsed time from a start point, or the time remaining until an end point.</td>
+                </tr>
+                <tr>
+                    <td>Toolbar</td>
+                    <td><a href="#toolbar">Tool Bar</a></td>
+                    <td>A toolbar is a collection of commonly used functions represented in compact visual form.</td>
+                </tr>
+                <tr>
+                    <td>Tooltip</td>
+                    <td><a href="#tooltip">Tooltip Widget</a></td>
+                    <td>A popup that displays a description for an element when a user passes over or rests on that element. Supplement to the normal tooltip processing of the user agent.</td>
+                </tr>
+                <tr>
+                    <td>Tree</td>
+                    <td><a href="#treeview">Treeview</a></td>
+                    <td>A form of a list having groups inside groups, where sub trees can be collapsed and expanded.</td>
+                </tr>
+                <tr>
+                    <td>Treegrid</td>
+                    <td><a href="#treegrid">Tree Grid</a>, <a href="#treeview">Treeview</a></td>
+                    <td>A grid whose rows can be expanded and collapsed in the same manner as for a tree.</td>
+                </tr>
+                <tr>
+                    <td>Treeitem</td>
+                    <td><a href="#treegrid">Tree Grid</a>, <a href="#treeview">Treeview</a></td>
+                    <td>An option item of a tree. This is an element within a tree that may be expanded or collapsed</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr/>
+        <a name="participants"></a>
+        <h1>Participants and Contributors</h1>
+        <ol>
+            <li>Tom Wlodkowski, AOL (Chair)</li>
+            <li>Chris Blouch, AOL</li>
+            <li>Tim Boland, NIST</li>
+            <li>David Bolter, Adaptive Technology Resource Centre, Faculty of Information, University of Toronto</li>
+            <li>Sally Cain, RNIB</li>
+            <li>Amy Chen, Oracle</li>
+            <li>Donald F. Evans, DeQue Systems</li>
+            <li>Becky Gibson, IBM</li>
+            <li>Al Gilman, W3C</li>
+            <li>Jon Gunderson, Ph.D. University of Illinois at Urbana-Champaign</li>
+            <li>Kenny Johar</li>
+            <li>Oliver Keim, SAP</li>
+            <li>Aaron M. Leventhal</li>
+            <li>James Nurthen, Oracle</li>
+            <li>Sailesh Panchang, DeQue Systems</li>
+            <li>Lisa Pappas, SAS</li>
+            <li>David Poehlman</li>
+            <li>Earl Johnson, SUN</li>
+            <li>Hadi Bargi Rangin, UIUC</li>
+            <li>Gregory J. Rosmaita, UBATS</li>
+            <li>Joseph Scheuhammer, Ph.D. Adaptive Technology Resource Centre, Faculty of Information, University of Toronto.</li>
+            <li>Stefan Schnabel, SAP</li>
+            <li>Richard Schwerdtfeger, IBM</li>
+            <li>Victor Tsaran, Yahoo</li>
+        </ol>
+
+<!-- 
+    END:
+    BELOW TAKEN FROM https://web.archive.org/web/20130127004544/http://dev.aol.com/dhtml_style_guide
+-->
+
+    </body>
+</html>
